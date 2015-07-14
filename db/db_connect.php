@@ -1,5 +1,6 @@
 <?php
 	//Include the database information file
+	//Small changes made by Bijay
 	include('db_information.php');
 	//creating MySQL connection
 	$mysqli = new mysqli($db_host, $db_username, $db_password, $db_name);	
@@ -10,7 +11,7 @@
 	$stmt = $mysqli->prepare("SELECT * FROM tbl_books WHERE author_id=?");
 	$stmt->bind_param("i",$author_id);
 	//set parameters and execute
-	$author_id=1;
+	$author_id=2;
 	$stmt->execute();
 	$result = $stmt->get_result();
 	echo "<table><tr><th>Author ID</th><th>Book  Name</th><th>Pages</th></tr>";
